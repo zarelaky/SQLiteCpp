@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="SQLiteC++ : SQLiteC++ is a smart and easy to use C++ SQLite3 wrapper." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>SQLiteC++</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/SRombauts/SQLiteCpp">Fork Me on GitHub</a>
+
+          <h1 id="project_title">SQLiteC++</h1>
+          <h2 id="project_tagline">SQLiteC++ is a smart and easy to use C++ SQLite3 wrapper.</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/SRombauts/SQLiteCpp/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/SRombauts/SQLiteCpp/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>License</h3>
+
+<p>Copyright (c) 2012 Sébastien Rombauts (sebastien.rombauts@gmail.com)</p>
+
+<p>Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
+or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
+
+<h3>The goals of SQLiteC++ are:</h3>
+
+<ul>
+<li>to offer the best of existing simple wrappers</li>
+<li>to use a permissive license like MIT or BSD</li>
+<li>to be elegantly written with good C++ design, STL, exceptions and RAII idiom</li>
+<li>to keep dependencies to a minimum (STL and SQLite3)</li>
+<li>to be well documented, in code with Doxygen, and online with some good examples</li>
+<li>to be portable</li>
+<li>to be light and fast</li>
+<li>to be monothreaded</li>
+<li>to use API names sticking with those of the SQLite library</li>
+<li>to be well maintained</li>
+</ul><p>It is designed with the Resource Acquisition Is Initialization (RAII) idom
+(see <a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization</a>),
+and throw exceptions in case of SQLite errors.
+Each SQLiteC++ object must be constructed with a valid SQLite database connection,
+and then is always valid until destroyed.</p>
+
+<h3>Depandancies:</h3>
+
+<ul>
+<li>a STL implementation (even an old one like VC6/eVC4 should work)</li>
+<li>exception support (the class Exception inherite from std::runtime_error)</li>
+<li>the SQLite library, either by linking to it dynamicaly or staticaly,
+or by adding its source file in your project code base.</li>
+</ul><p>To use it in your project, you only need to add the 6 SQLiteC++ source files
+in your project code base (not the main.cpp example file).</p>
+
+<h3>About SQLite:</h3>
+
+<p>SQLite is a library that implements a serverless transactional SQL database engine.
+<a href="http://www.sqlite.org/about.html">http://www.sqlite.org/about.html</a></p>
+
+<h3>First sample demonstrates how to query a database and get results:</h3>
+
+<div class="highlight">
+<pre><span class="k">try</span>
+<span class="p">{</span>
+    <span class="c1">// Open a database file</span>
+    <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span>    <span class="n">db</span><span class="p">(</span><span class="s">"example.db3"</span><span class="p">);</span>
+
+    <span class="c1">// Compile a SQL query, containing one parameter (index 1)</span>
+    <span class="n">SQLite</span><span class="o">::</span><span class="n">Statement</span>   <span class="n">query</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="s">"SELECT * FROM test WHERE size &gt; ?"</span><span class="p">);</span>
+
+    <span class="c1">// Bind the integer value 6 to the first parameter of the SQL query</span>
+    <span class="n">query</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+
+    <span class="c1">// Loop to execute the query step by step, to get rows of result</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="n">executeStep</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// Demonstrate how to get some typed column value</span>
+        <span class="kt">int</span>         <span class="n">id</span>      <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">value</span>   <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="kt">int</span>         <span class="n">size</span>    <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"row: "</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">","</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">","</span> <span class="o">&lt;&lt;</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"exception: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+
+<h3>Second sample shows how to manage a transaction:</h3>
+
+<div class="highlight">
+<pre><span class="k">try</span>
+<span class="p">{</span>
+    <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span> <span class="n">db</span><span class="p">(</span><span class="s">"transaction.db3"</span><span class="p">,</span> <span class="n">SQLITE_OPEN_READWRITE</span><span class="o">|</span>
+                                           <span class="n">SQLITE_OPEN_CREATE</span><span class="p">);</span>
+
+    <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"DROP TABLE IF EXISTS test"</span><span class="p">);</span>
+
+    <span class="c1">// Begin transaction</span>
+    <span class="n">SQLite</span><span class="o">::</span><span class="n">Transaction</span> <span class="n">transaction</span><span class="p">(</span><span class="n">db</span><span class="p">);</span>
+
+    <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">nb</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"INSERT INTO test VALUES (NULL, </span><span class="se">\"</span><span class="s">test</span><span class="se">\"</span><span class="s">)"</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"INSERT INTO test returned "</span> <span class="o">&lt;&lt;</span> <span class="n">nb</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// Commit transaction</span>
+    <span class="n">transaction</span><span class="p">.</span><span class="n">commit</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"exception: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+</div>
+
+
+<h3>Some other simple C++ SQLite wrappers:</h3>
+
+<ul>
+<li>
+<a href="http://code.google.com/p/sqdbcpp/">sqdbcpp</a>: RAII design, simple, no depandencies, UTF-8/UTF-16, new BSD license</li>
+<li>
+<a href="http://ed.am/dev/sqlite3cc">sqlite3cc</a>: uses boost, modern design, LPGPL</li>
+<li>
+<a href="http://code.google.com/p/sqlite3pp/">sqlite3pp</a>: uses boost, MIT License </li>
+<li>
+<a href="http://sqlitepp.berlios.de/">SQLite++</a>: uses boost build system, Boost License 1.0 </li>
+<li>
+<a href="http://www.codeproject.com/Articles/6343/CppSQLite-C-Wrapper-for-SQLite/">CppSQLite</a>: famous Code Project but old design, BSD License </li>
+<li>
+<a href="http://code.google.com/p/easysqlite/">easySQLite</a>: manages table as structured objects, complex </li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">SQLiteC++ maintained by <a href="https://github.com/SRombauts">SRombauts</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
