@@ -16,15 +16,15 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/SRombauts/SQLiteCpp">Fork Me on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/SRombauts/SQLiteCpp">View on GitHub</a>
 
           <h1 id="project_title">SQLiteC++</h1>
           <h2 id="project_tagline">SQLiteC++ is a smart and easy to use C++ SQLite3 wrapper.</h2>
 
-          <section id="downloads">
-            <a class="zip_download_link" href="https://github.com/SRombauts/SQLiteCpp/zipball/master">Download this project as a .zip file</a>
-            <a class="tar_download_link" href="https://github.com/SRombauts/SQLiteCpp/tarball/master">Download this project as a tar.gz file</a>
-          </section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/SRombauts/SQLiteCpp/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/SRombauts/SQLiteCpp/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
     </div>
 
@@ -33,7 +33,7 @@
       <section id="main_content" class="inner">
         <h3>License</h3>
 
-<p>Copyright (c) 2012 Sébastien Rombauts (sebastien.rombauts@gmail.com)</p>
+<p>Copyright (c) 2012-2013 Sébastien Rombauts (<a href="mailto:sebastien.rombauts@gmail.com">sebastien.rombauts@gmail.com</a>)</p>
 
 <p>Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
 or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
@@ -41,19 +41,20 @@ or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/li
 <h3>The goals of SQLiteC++ are:</h3>
 
 <ul>
+<li>to use a permissive MIT license, similar to BSD or Boost, for proprietary/commercial usage</li>
 <li>to offer the best of existing simple wrappers</li>
-<li>to use a permissive license like MIT or BSD</li>
 <li>to be elegantly written with good C++ design, STL, exceptions and RAII idiom</li>
 <li>to keep dependencies to a minimum (STL and SQLite3)</li>
-<li>to be well documented, in code with Doxygen, and online with some good examples</li>
 <li>to be portable</li>
 <li>to be light and fast</li>
-<li>to be monothreaded</li>
+<li>to be monothreaded (not thread-safe)</li>
 <li>to use API names sticking with those of the SQLite library</li>
+<li>to be well documented in code with Doxygen, and online with some good examples</li>
 <li>to be well maintained</li>
-</ul><p>It is designed with the Resource Acquisition Is Initialization (RAII) idom
+</ul><p>It is designed using the Resource Acquisition Is Initialization (RAII) idom
 (see <a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization">http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization</a>),
-and throw exceptions in case of SQLite errors.
+and throwing exceptions in case of SQLite errors (exept in destructors,
+where assert() are used instead).
 Each SQLiteC++ object must be constructed with a valid SQLite database connection,
 and then is always valid until destroyed.</p>
 
@@ -74,8 +75,7 @@ in your project code base (not the main.cpp example file).</p>
 
 <h3>First sample demonstrates how to query a database and get results:</h3>
 
-<div class="highlight">
-<pre><span class="k">try</span>
+<div class="highlight"><pre><span class="n">try</span>
 <span class="p">{</span>
     <span class="c1">// Open a database file</span>
     <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span>    <span class="n">db</span><span class="p">(</span><span class="s">"example.db3"</span><span class="p">);</span>
@@ -101,14 +101,11 @@ in your project code base (not the main.cpp example file).</p>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"exception: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h3>Second sample shows how to manage a transaction:</h3>
 
-<div class="highlight">
-<pre><span class="k">try</span>
+<div class="highlight"><pre><span class="n">try</span>
 <span class="p">{</span>
     <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span> <span class="n">db</span><span class="p">(</span><span class="s">"transaction.db3"</span><span class="p">,</span> <span class="n">SQLITE_OPEN_READWRITE</span><span class="o">|</span>
                                            <span class="n">SQLITE_OPEN_CREATE</span><span class="p">);</span>
@@ -130,9 +127,7 @@ in your project code base (not the main.cpp example file).</p>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"exception: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
-</pre>
-</div>
-
+</pre></div>
 
 <h3>Some other simple C++ SQLite wrappers:</h3>
 
