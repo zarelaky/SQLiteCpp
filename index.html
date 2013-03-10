@@ -31,24 +31,29 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>License</h3>
+        <h3>About SQLite:</h3>
 
-<p>Copyright (c) 2012-2013 Sébastien Rombauts (<a href="mailto:sebastien.rombauts@gmail.com">sebastien.rombauts@gmail.com</a>)</p>
+<p>SQLite is a library that implements a serverless transactional SQL database engine.
+It is the most widely deployed SQL database engine in the world.
+The source code for SQLite is in the public domain.
+<a href="http://www.sqlite.org/about.html">http://www.sqlite.org/about.html</a></p>
 
-<p>Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
-or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
+<h3>About SQLiteC++:</h3>
+
+<p>SQLiteC++ offers an encapsulation arround the native C APIs of sqlite,
+with a few intuitive and well documented C++ class.</p>
 
 <h3>The goals of SQLiteC++ are:</h3>
 
 <ul>
-<li>to offer the best of existing simple wrappers</li>
+<li>to offer the best of existing simple C++ SQLite wrappers</li>
 <li>to be elegantly written with good C++ design, STL, exceptions and RAII idiom</li>
 <li>to keep dependencies to a minimum (STL and SQLite3)</li>
 <li>to be portable</li>
 <li>to be light and fast</li>
 <li>to be monothreaded (not thread-safe)</li>
 <li>to use API names sticking with those of the SQLite library</li>
-<li>to be well documented in code with Doxygen, and online with some good examples</li>
+<li>to be well documented with Doxygen tags, and with some good examples</li>
 <li>to be well maintained</li>
 <li>to use a permissive MIT license, similar to BSD or Boost, for proprietary/commercial usage</li>
 </ul><p>It is designed using the Resource Acquisition Is Initialization (RAII) idom
@@ -58,20 +63,38 @@ where assert() are used instead).
 Each SQLiteC++ object must be constructed with a valid SQLite database connection,
 and then is always valid until destroyed.</p>
 
-<h3>Depandancies:</h3>
+<h3> Suported platforms:</h3>
+
+<p>Developements and tests are done under the following OSs :</p>
 
 <ul>
-<li>a STL implementation (even an old one like VC6/eVC4 should work)</li>
-<li>exception support (the class Exception inherite from std::runtime_error)</li>
-<li>the SQLite library, either by linking to it dynamicaly or staticaly,
-or by adding its source file in your project code base.</li>
-</ul><p>To use it in your project, you only need to add the 6 SQLiteC++ source files
-in your project code base (not the main.cpp example file).</p>
+<li>Debian 7 (testing)</li>
+<li>Ubuntu 12.04</li>
+<li>Windows XP/7/8
+And following IDEs/Compilers</li>
+<li>GCC 4.7.x with a provided Makefile</li>
+<li>Eclipse CDT under Linux, using the provided Makefile</li>
+<li>Visual Studio Express 2008/2010/2012 for testing compatibility purpose</li>
+</ul><h3>Dependencies:</h3>
 
-<h3>About SQLite:</h3>
+<ul>
+<li>a STL implementation (even an old one, like the one provided with VC6 should work)</li>
+<li>exception support (the class Exception inherit from std::runtime_error)</li>
+<li>the SQLite library, either by linking to it dynamicaly or staticaly (libsqlite3-dev under Linux),
+or by adding its source file in your project code base (source code provided in src/sqlite3 for Windows).</li>
+</ul><h3>Installation:</h3>
 
-<p>SQLite is a library that implements a serverless transactional SQL database engine.
-<a href="http://www.sqlite.org/about.html">http://www.sqlite.org/about.html</a></p>
+<p>To use this wrappers, you need to add the 10 SQLiteC++ source files from the src/ directory
+in your project code base, and compile/link against the sqlite library.</p>
+
+<h3>License</h3>
+
+<p>Copyright (c) 2012-2013 Sébastien Rombauts (<a href="mailto:sebastien.rombauts@gmail.com">sebastien.rombauts@gmail.com</a>)</p>
+
+<p>Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
+or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
+
+<h2>Getting started</h2>
 
 <h3>First sample demonstrates how to query a database and get results:</h3>
 
@@ -94,7 +117,7 @@ in your project code base (not the main.cpp example file).</p>
         <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">value</span>   <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
         <span class="kt">int</span>         <span class="n">size</span>    <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"row: "</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">","</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">","</span> <span class="o">&lt;&lt;</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"row: "</span> <span class="o">&lt;&lt;</span> <span class="n">id</span> <span class="o">&lt;&lt;</span> <span class="s">", "</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="s">", "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span>
@@ -107,8 +130,7 @@ in your project code base (not the main.cpp example file).</p>
 
 <div class="highlight"><pre><span class="n">try</span>
 <span class="p">{</span>
-    <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span> <span class="n">db</span><span class="p">(</span><span class="s">"transaction.db3"</span><span class="p">,</span> <span class="n">SQLITE_OPEN_READWRITE</span><span class="o">|</span>
-                                           <span class="n">SQLITE_OPEN_CREATE</span><span class="p">);</span>
+    <span class="n">SQLite</span><span class="o">::</span><span class="n">Database</span>    <span class="n">db</span><span class="p">(</span><span class="s">"transaction.db3"</span><span class="p">,</span> <span class="n">SQLITE_OPEN_READWRITE</span><span class="o">|</span><span class="n">SQLITE_OPEN_CREATE</span><span class="p">);</span>
 
     <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"DROP TABLE IF EXISTS test"</span><span class="p">);</span>
 
@@ -118,7 +140,7 @@ in your project code base (not the main.cpp example file).</p>
     <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"</span><span class="p">);</span>
 
     <span class="kt">int</span> <span class="n">nb</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">exec</span><span class="p">(</span><span class="s">"INSERT INTO test VALUES (NULL, </span><span class="se">\"</span><span class="s">test</span><span class="se">\"</span><span class="s">)"</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"INSERT INTO test returned "</span> <span class="o">&lt;&lt;</span> <span class="n">nb</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"INSERT INTO test VALUES (NULL, </span><span class="se">\"</span><span class="s">test</span><span class="se">\"</span><span class="s">)</span><span class="se">\"</span><span class="s">, returned "</span> <span class="o">&lt;&lt;</span> <span class="n">nb</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
     <span class="c1">// Commit transaction</span>
     <span class="n">transaction</span><span class="p">.</span><span class="n">commit</span><span class="p">();</span>
@@ -129,7 +151,35 @@ in your project code base (not the main.cpp example file).</p>
 <span class="p">}</span>
 </pre></div>
 
-<h3>Some other simple C++ SQLite wrappers:</h3>
+<h2>How to contribute</h2>
+
+<h3>GitHub website</h3>
+
+<p>The most efficient way to help and contribute to this wrapper project is to
+use the tools provided by GitHub:</p>
+
+<ul>
+<li>please fill bug reports and feature requests here: <a href="https://github.com/SRombauts/SQLiteCpp/issues">https://github.com/SRombauts/SQLiteCpp/issues</a>
+</li>
+<li>fork the repository, make some small changes and submit them with pull-request</li>
+</ul><h3>Contact</h3>
+
+<p>You can also email me directly, I will answer any questions and requests.</p>
+
+<h3>Coding Style Guidelines</h3>
+
+<p>The source code use the CamelCase naming style variant where :</p>
+
+<ul>
+<li>type names (class, struct, typedef, enums...) begins with a capital letter</li>
+<li>files (.cpp/.h) are named like the class they contains</li>
+<li>function and variable names begins with a lower case letter</li>
+<li>member variables begins with a 'm', function arguments begins with a 'a', boolean with a 'b', pointers with a 'p'</li>
+<li>each file, class, method and member variable is documented using Doxygen tags
+See also <a href="http://www.appinf.com/download/CppCodingStyleGuide.pdf">http://www.appinf.com/download/CppCodingStyleGuide.pdf</a> for good guidelines</li>
+</ul><h2>See also - Some other simple C++ SQLite wrappers:</h2>
+
+<p>See also the file WRAPPERS.md offering a more complete comparison of other wrappers.</p>
 
 <ul>
 <li>
@@ -137,7 +187,7 @@ in your project code base (not the main.cpp example file).</p>
 <li>
 <a href="http://ed.am/dev/sqlite3cc">sqlite3cc</a>: uses boost, modern design, LPGPL</li>
 <li>
-<a href="http://code.google.com/p/sqlite3pp/">sqlite3pp</a>: uses boost, MIT License </li>
+<a href="http://code.google.com/p/sqlite3pp/">sqlite3pp</a>: uses boost, but never updated since initial publication in may 2012, MIT License</li>
 <li>
 <a href="http://sqlitepp.berlios.de/">SQLite++</a>: uses boost build system, Boost License 1.0 </li>
 <li>
