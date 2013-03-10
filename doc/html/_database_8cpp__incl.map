@@ -1,0 +1,6 @@
+<map id="src/Database.cpp" name="src/Database.cpp">
+<area shape="rect" id="node2" href="$_database_8h.html" title="Management of a SQLite Database Connection." alt="" coords="77,80,165,107"/>
+<area shape="rect" id="node8" href="$_statement_8h.html" title="A prepared SQLite Statement is a compiled SQL query ready to be executed, pointing to a row of result..." alt="" coords="101,229,195,256"/>
+<area shape="rect" id="node4" href="$_exception_8h.html" title="Encapsulation of the error message from SQLite3 on a std::runtime_error." alt="" coords="237,304,328,331"/>
+<area shape="rect" id="node7" href="$_column_8h.html" title="Encapsulation of a Column in a row of the result pointed by the prepared SQLite::Statement." alt="" coords="151,155,228,181"/>
+</map>

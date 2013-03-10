@@ -1,0 +1,7 @@
+<map id="SQLite::Column::getType" name="SQLite::Column::getType">
+<area shape="rect" id="node2" href="$class_s_q_lite_1_1_column.html#aad8ff15f760491dccded0852eb96b07b" title="Test if the column is an integer type value (meaningfull only before any conversion)" alt="" coords="221,5,392,32"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_1_1_column.html#a6d5b1205fb9f5d8b973834b733c0dec8" title="Test if the column is a floting point type value (meaningfull only before any conversion)" alt="" coords="226,56,387,83"/>
+<area shape="rect" id="node4" href="$class_s_q_lite_1_1_column.html#a8ca26d47a8b770f971fc9ed4da5126d9" title="Test if the column is a text type value (meaningfull only before any conversion)" alt="" coords="228,107,385,133"/>
+<area shape="rect" id="node5" href="$class_s_q_lite_1_1_column.html#a1309055a5c086234db93c3cd75e51e60" title="Test if the column is a binary blob type value (meaningfull only before any conversion)" alt="" coords="227,157,386,184"/>
+<area shape="rect" id="node6" href="$class_s_q_lite_1_1_column.html#a0feac2c180e1ea78c4ca73e385eb1b66" title="Test if the column is NULL (meaningfull only before any conversion)" alt="" coords="229,208,384,235"/>
+</map>

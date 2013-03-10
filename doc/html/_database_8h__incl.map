@@ -1,0 +1,5 @@
+<map id="src/Database.h" name="src/Database.h">
+<area shape="rect" id="node3" href="$_exception_8h.html" title="Encapsulation of the error message from SQLite3 on a std::runtime_error." alt="" coords="47,229,137,256"/>
+<area shape="rect" id="node6" href="$_column_8h.html" title="Encapsulation of a Column in a row of the result pointed by the prepared SQLite::Statement." alt="" coords="137,80,215,107"/>
+<area shape="rect" id="node7" href="$_statement_8h.html" title="A prepared SQLite Statement is a compiled SQL query ready to be executed, pointing to a row of result..." alt="" coords="129,155,223,181"/>
+</map>

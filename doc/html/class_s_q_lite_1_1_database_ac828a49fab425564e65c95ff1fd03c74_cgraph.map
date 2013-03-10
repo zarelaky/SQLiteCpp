@@ -1,0 +1,4 @@
+<map id="SQLite::Database::execAndGet" name="SQLite::Database::execAndGet">
+<area shape="rect" id="node2" href="$class_s_q_lite_1_1_statement.html#aa7f29464b5fbe4b8da92d769e52472d8" title="Execute a step of the prepared query to fetch one row of results." alt="" coords="259,5,397,46"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_1_1_statement.html#a5b7c9372b9023a86e7242d47052f06f7" title="Return a copie of the column data specified by its index." alt="" coords="259,70,397,111"/>
+</map>

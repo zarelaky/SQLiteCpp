@@ -1,0 +1,5 @@
+<map id="SQLite::Database::exec" name="SQLite::Database::exec">
+<area shape="rect" id="node2" href="$class_s_q_lite_1_1_transaction.html#a2c18ffe14d32584c88ea83a72243d412" title="Begins the SQLite transaction." alt="" coords="217,5,354,46"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_1_1_transaction.html#a87b3d44948f0899c494e62542b3f92c3" title="Safely rollback the transaction if it has not been committed." alt="" coords="217,70,354,111"/>
+<area shape="rect" id="node4" href="$class_s_q_lite_1_1_transaction.html#a359ed0e2e88fec83c90f513598e1b03f" title="Commit the transaction." alt="" coords="217,135,354,177"/>
+</map>

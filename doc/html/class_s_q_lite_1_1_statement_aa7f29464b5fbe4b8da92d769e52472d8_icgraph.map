@@ -1,0 +1,4 @@
+<map id="SQLite::Statement::executeStep" name="SQLite::Statement::executeStep">
+<area shape="rect" id="node2" href="$class_s_q_lite_1_1_database.html#ac828a49fab425564e65c95ff1fd03c74" title="Shortcut to execute a one step query and fetch the first column of the result." alt="" coords="192,5,397,32"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_1_1_database.html#a672bdb55f1fe7be6f9498bbab1a3f740" title="Shortcut to test if a table exists." alt="" coords="195,56,394,83"/>
+</map>

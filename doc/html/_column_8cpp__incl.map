@@ -1,0 +1,5 @@
+<map id="src/Column.cpp" name="src/Column.cpp">
+<area shape="rect" id="node2" href="$_column_8h.html" title="Encapsulation of a Column in a row of the result pointed by the prepared SQLite::Statement." alt="" coords="69,80,147,107"/>
+<area shape="rect" id="node4" href="$_exception_8h.html" title="Encapsulation of the error message from SQLite3 on a std::runtime_error." alt="" coords="131,229,221,256"/>
+<area shape="rect" id="node7" href="$_statement_8h.html" title="A prepared SQLite Statement is a compiled SQL query ready to be executed, pointing to a row of result..." alt="" coords="61,155,155,181"/>
+</map>

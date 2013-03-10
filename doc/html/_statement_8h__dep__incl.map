@@ -1,0 +1,9 @@
+<map id="src/Statement.h" name="src/Statement.h">
+<area shape="rect" id="node2" href="$_column_8h.html" title="Encapsulation of a Column in a row of the result pointed by the prepared SQLite::Statement." alt="" coords="288,80,387,107"/>
+<area shape="rect" id="node5" href="$_database_8cpp.html" title="Management of a SQLite Database Connection." alt="" coords="471,229,595,256"/>
+<area shape="rect" id="node6" href="$_s_q_lite_c_09_09_8h.html" title="SQLiteC++ is a smart and simple C++ SQLite3 wrapper. This file is only &quot;easy include&quot; for other files..." alt="" coords="5,229,125,256"/>
+<area shape="rect" id="node7" href="$_statement_8cpp.html" title="A prepared SQLite Statement is a compiled SQL query ready to be executed, pointing to a row of result..." alt="" coords="318,229,447,256"/>
+<area shape="rect" id="node3" href="$_column_8cpp.html" title="Encapsulation of a Column in a row of the result pointed by the prepared SQLite::Statement." alt="" coords="281,155,393,181"/>
+<area shape="rect" id="node4" href="$_database_8h.html" title="Management of a SQLite Database Connection." alt="" coords="146,155,256,181"/>
+<area shape="rect" id="node8" href="$_transaction_8cpp.html" title="A Transaction is way to group multiple SQL statements into an atomic secured operation." alt="" coords="149,229,285,256"/>
+</map>
