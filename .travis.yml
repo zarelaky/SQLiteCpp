@@ -30,4 +30,6 @@ script:
 
 # publish GCov coveralls results
 after_success:
-  - coveralls -e build/CMakeFiles -e examples -e googletest -e sqlite3 -e tests
+# TODO also try with --gcov-options 'l' and 'p'
+# - if [ "$CC" = "gcc" ]; then coveralls -e examples -e googletest -e sqlite3 -e tests -e /usr/include --gcov-options '\-lp' ; fi
+  - if [ "$CC" = "gcc" ]; then coveralls ; fi
