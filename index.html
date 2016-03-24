@@ -20,43 +20,53 @@
 
     <section class="main-content">
       <h2>
-<a id="sqlitec" class="anchor" href="#sqlitec" aria-hidden="true"><span class="octicon octicon-link"></span></a>SQLiteC++</h2>
+<a id="sqlitec" class="anchor" href="#sqlitec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SQLiteC++</h2>
 
 <p><a href="https://github.com/SRombauts/SQLiteCpp/releases"><img src="https://img.shields.io/github/release/SRombauts/SQLiteCpp.svg" alt="release"></a>
 <a href="https://github.com/SRombauts/SQLiteCpp/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/SRombauts/SQLiteCpp.svg" alt="license"></a>
 <a href="https://travis-ci.org/SRombauts/SQLiteCpp" title="Travis CI Linux Build Status"><img src="https://travis-ci.org/SRombauts/SQLiteCpp.svg" alt="Travis CI Linux Build Status"></a>
 <a href="https://ci.appveyor.com/project/SbastienRombauts/SQLiteCpp" title="AppVeyor Windows Build status"><img src="https://ci.appveyor.com/api/projects/status/github/SRombauts/SQLiteCpp?svg=true" alt="AppVeyor Windows Build status"></a>
-<a href="https://www.biicode.com/sqlite/sqlite"><img src="https://webapi.biicode.com/v1/badges/sqlite/sqlite/sqlite/master" alt="Biicode Build Status"></a> 
 <a href="https://gitter.im/SRombauts/SQLiteCpp?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/SRombauts/SQLiteCpp"></a></p>
 
 <p>SQLiteC++ (SQLiteCpp) is a smart and easy to use C++ SQLite3 wrapper.</p>
 
+<p>See SQLiteC++ website <a href="http://srombauts.github.com/SQLiteCpp">http://srombauts.github.com/SQLiteCpp</a> on GitHub.</p>
+
 <p>Keywords: sqlite, sqlite3, C, library, wrapper C++</p>
 
 <h2>
-<a id="about-sqlitec" class="anchor" href="#about-sqlitec" aria-hidden="true"><span class="octicon octicon-link"></span></a>About SQLiteC++:</h2>
+<a id="about-sqlitec" class="anchor" href="#about-sqlitec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About SQLiteC++:</h2>
 
 <p>SQLiteC++ offers an encapsulation arround the native C APIs of SQLite,
 with a few intuitive and well documented C++ class.</p>
 
 <h3>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License:</h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License:</h3>
 
-<p>Copyright (c) 2012-2015 Sébastien Rombauts (<a href="mailto:sebastien.rombauts@gmail.com">sebastien.rombauts@gmail.com</a>)</p>
+<p>Copyright (c) 2012-2016 Sébastien Rombauts (<a href="mailto:sebastien.rombauts@gmail.com">sebastien.rombauts@gmail.com</a>)</p>
 
 <p>Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt
 or copy at <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</p>
 
+<h4>
+<a id="note-on-redistribution-of-sqlite-source-files" class="anchor" href="#note-on-redistribution-of-sqlite-source-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Note on redistribution of SQLite source files</h4>
+
+<p>As stated by the MIT License, you are welcome to reuse, modify, and redistribute the SQLiteCpp source code
+the way you want it to, be it a git submodule, a subdirectory, or a selection of some source files.</p>
+
+<p>I would love a mention in your README, a web link to the SQLite repository, and a mention of the author,
+but none of those are mandatory.</p>
+
 <h3>
-<a id="about-sqlite-underlying-library" class="anchor" href="#about-sqlite-underlying-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>About SQLite underlying library:</h3>
+<a id="about-sqlite-underlying-library" class="anchor" href="#about-sqlite-underlying-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About SQLite underlying library:</h3>
 
 <p>SQLite is a library that implements a serverless transactional SQL database engine.
 It is the most widely deployed SQL database engine in the world.
-The source code for SQLite is in the public domain.
+All of the code and documentation in SQLite has been dedicated to the public domain by the authors.
 <a href="http://www.sqlite.org/about.html">http://www.sqlite.org/about.html</a></p>
 
 <h3>
-<a id="the-goals-of-sqlitec-are" class="anchor" href="#the-goals-of-sqlitec-are" aria-hidden="true"><span class="octicon octicon-link"></span></a>The goals of SQLiteC++ are:</h3>
+<a id="the-goals-of-sqlitec-are" class="anchor" href="#the-goals-of-sqlitec-are" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The goals of SQLiteC++ are:</h3>
 
 <ul>
 <li>to offer the best of existing simple C++ SQLite wrappers</li>
@@ -80,7 +90,7 @@ Each SQLiteC++ object must be constructed with a valid SQLite database connectio
 and then is always valid until destroyed.</p>
 
 <h3>
-<a id="supported-platforms" class="anchor" href="#supported-platforms" aria-hidden="true"><span class="octicon octicon-link"></span></a> Supported platforms:</h3>
+<a id="supported-platforms" class="anchor" href="#supported-platforms" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported platforms:</h3>
 
 <p>Developements and tests are done under the following OSs:</p>
 
@@ -89,13 +99,14 @@ and then is always valid until destroyed.</p>
 <li>Debian 7</li>
 <li>Windows XP/10
 And following IDEs/Compilers</li>
-<li>GCC 4.7.2 and GCC 4.8.2</li>
+<li>GCC 4.6.3, 4.7.2 and GCC 4.8.2</li>
+<li>Clang 3.4</li>
 <li>Eclipse CDT under Linux</li>
-<li>Visual Studio Express 2008/2010/2012/2013/2015 for testing compatibility purpose</li>
+<li>Visual Studio Express 2008 and Community 2015</li>
 </ul>
 
 <h3>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
 
 <ul>
 <li>a STL implementation (even an old one, like the one provided with VC6 should work)</li>
@@ -106,10 +117,10 @@ with the SQLITE_ENABLE_COLUMN_METADATA macro defined (see <a href="http://www.sq
 </ul>
 
 <h2>
-<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
 
 <h3>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
 
 <p>To use this wrappers, you need to add the 10 SQLiteC++ source files from the src/ directory
 in your project code base, and compile/link against the sqlite library.</p>
@@ -123,7 +134,7 @@ Thus this SQLiteCpp repository can directly be used as a Git submoldule.</p>
 <p>Under Debian/Ubuntu/Mint Linux, install the libsqlite3-dev package.</p>
 
 <h3>
-<a id="building-examples-and-unit-tests" class="anchor" href="#building-examples-and-unit-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building examples and unit-tests:</h3>
+<a id="building-examples-and-unit-tests" class="anchor" href="#building-examples-and-unit-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building examples and unit-tests:</h3>
 
 <p>Use git to clone the repository. Then init and update submodule "googletest".</p>
 
@@ -133,7 +144,7 @@ git submodule init
 git submodule update</pre></div>
 
 <h4>
-<a id="cmake-and-tests" class="anchor" href="#cmake-and-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>CMake and tests</h4>
+<a id="cmake-and-tests" class="anchor" href="#cmake-and-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CMake and tests</h4>
 
 <p>A CMake configuration file is also provided for multiplatform support and testing.</p>
 
@@ -167,14 +178,14 @@ cmake --build <span class="pl-c1">.</span>
 ctest --output-on-failure</pre></div>
 
 <h4>
-<a id="cmake-options" class="anchor" href="#cmake-options" aria-hidden="true"><span class="octicon octicon-link"></span></a> CMake options</h4>
+<a id="cmake-options" class="anchor" href="#cmake-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CMake options</h4>
 
 <ul>
 <li>For more options on customizing the build, see the <a href="https://github.com/SRombauts/SQLiteCpp/blob/master/CMakeLists.txt">CMakeLists.txt</a> file.</li>
 </ul>
 
 <h4>
-<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h4>
+<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Troubleshooting</h4>
 
 <p>Under Linux, if you get muliple linker errors like "undefined reference to sqlite3_xxx",
 it's that you lack the "sqlite3" library: install the libsqlite3-dev package.</p>
@@ -187,7 +198,7 @@ You can either recompile it yourself (seek help online) or you can comment out t
 <div class="highlight highlight-source-c++"><pre>#<span class="pl-k">define</span> <span class="pl-en">SQLITE_ENABLE_COLUMN_METADATA</span></pre></div>
 
 <h3>
-<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span class="octicon octicon-link"></span></a> Continuous Integration</h3>
+<a id="continuous-integration" class="anchor" href="#continuous-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Continuous Integration</h3>
 
 <p>This project is continuously tested under Ubuntu Linux with the gcc and clang compilers
 using the Travis CI community service with the above CMake building and testing procedure.
@@ -202,7 +213,7 @@ using the AppVeyor countinuous integration service.</p>
 </ul>
 
 <h3>
-<a id="thread-safety" class="anchor" href="#thread-safety" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thread-safety</h3>
+<a id="thread-safety" class="anchor" href="#thread-safety" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thread-safety</h3>
 
 <p>SQLite supports three mode of thread safety, as describe in "SQLite And Multiple Threads" :
 see <a href="http://www.sqlite.org/threadsafe.html">http://www.sqlite.org/threadsafe.html</a></p>
@@ -219,10 +230,10 @@ because of the way it shares the underling SQLite precompiled statement
 in a custom shared pointer (See the inner class "Statement::Ptr").</p>
 
 <h2>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
 
 <h3>
-<a id="first-sample-demonstrates-how-to-query-a-database-and-get-results" class="anchor" href="#first-sample-demonstrates-how-to-query-a-database-and-get-results" aria-hidden="true"><span class="octicon octicon-link"></span></a>First sample demonstrates how to query a database and get results:</h3>
+<a id="first-sample-demonstrates-how-to-query-a-database-and-get-results" class="anchor" href="#first-sample-demonstrates-how-to-query-a-database-and-get-results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>First sample demonstrates how to query a database and get results:</h3>
 
 <div class="highlight highlight-source-c++"><pre><span class="pl-k">try</span>
 {
@@ -252,7 +263,7 @@ in a custom shared pointer (See the inner class "Statement::Ptr").</p>
 }</pre></div>
 
 <h3>
-<a id="second-sample-shows-how-to-manage-a-transaction" class="anchor" href="#second-sample-shows-how-to-manage-a-transaction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Second sample shows how to manage a transaction:</h3>
+<a id="second-sample-shows-how-to-manage-a-transaction" class="anchor" href="#second-sample-shows-how-to-manage-a-transaction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Second sample shows how to manage a transaction:</h3>
 
 <div class="highlight highlight-source-c++"><pre><span class="pl-k">try</span>
 {
@@ -277,7 +288,7 @@ in a custom shared pointer (See the inner class "Statement::Ptr").</p>
 }</pre></div>
 
 <h3>
-<a id="how-to-handle-assertion-in-sqlitec" class="anchor" href="#how-to-handle-assertion-in-sqlitec" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to handle assertion in SQLiteC++:</h3>
+<a id="how-to-handle-assertion-in-sqlitec" class="anchor" href="#how-to-handle-assertion-in-sqlitec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to handle assertion in SQLiteC++:</h3>
 
 <p>Exceptions shall not be used in destructors, so SQLiteC++ use SQLITECPP_ASSERT() to check for errors in destructors.
 If you don't want assert() to be called, you have to enable and define an assert handler as shown below,
@@ -297,10 +308,10 @@ and by setting the flag SQLITECPP_ENABLE_ASSERT_HANDLER when compiling the lib.<
 #<span class="pl-k">endif</span></pre></div>
 
 <h2>
-<a id="how-to-contribute" class="anchor" href="#how-to-contribute" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to contribute</h2>
+<a id="how-to-contribute" class="anchor" href="#how-to-contribute" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to contribute</h2>
 
 <h3>
-<a id="github-website" class="anchor" href="#github-website" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub website</h3>
+<a id="github-website" class="anchor" href="#github-website" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GitHub website</h3>
 
 <p>The most efficient way to help and contribute to this wrapper project is to
 use the tools provided by GitHub:</p>
@@ -312,12 +323,12 @@ use the tools provided by GitHub:</p>
 </ul>
 
 <h3>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h3>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
 
 <p>You can also email me directly, I will answer any questions and requests.</p>
 
 <h3>
-<a id="coding-style-guidelines" class="anchor" href="#coding-style-guidelines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coding Style Guidelines</h3>
+<a id="coding-style-guidelines" class="anchor" href="#coding-style-guidelines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Coding Style Guidelines</h3>
 
 <p>The source code use the CamelCase naming style variant where :</p>
 
@@ -331,7 +342,7 @@ See also <a href="http://www.appinf.com/download/CppCodingStyleGuide.pdf">http:/
 </ul>
 
 <h2>
-<a id="see-also---some-other-simple-c-sqlite-wrappers" class="anchor" href="#see-also---some-other-simple-c-sqlite-wrappers" aria-hidden="true"><span class="octicon octicon-link"></span></a>See also - Some other simple C++ SQLite wrappers:</h2>
+<a id="see-also---some-other-simple-c-sqlite-wrappers" class="anchor" href="#see-also---some-other-simple-c-sqlite-wrappers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also - Some other simple C++ SQLite wrappers:</h2>
 
 <p>See bellow a short comparison of other wrappers done at the time of the writting:</p>
 
