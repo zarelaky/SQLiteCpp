@@ -12,6 +12,7 @@ if (WIN32)
     set(DEV_NULL                "NUL")
 else (WIN32) # UNIX
     set(DEV_NULL                "/dev/null")
+    include(GNUInstallDirs)
 endif (WIN32)
 
 # then Compiler/IDE differences:
@@ -42,6 +43,7 @@ else (MSVC)
             add_definitions (-fprofile-arcs -ftest-coverage)
             set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage")
         endif ()
+        add_definitions (-fPIC)
     endif (CMAKE_COMPILER_IS_GNUCXX)
 endif (MSVC)
 # and then common variables
@@ -134,6 +136,18 @@ include_directories("${PROJECT_SOURCE_DIR}/include")
 
 # add sources of the wrapper as a "SQLiteCpp" static library
 add_library(SQLiteCpp ${SQLITECPP_SRC} ${SQLITECPP_INC} ${SQLITECPP_DOC} ${SQLITECPP_SCRIPT})
+target_compile_options(SQLiteCpp PRIVATE -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0)
+
+if (UNIX)
+    INSTALL(TARGETS SQLiteCpp
+        RUNTIME DESTINATION bin
+        ARCHIVE DESTINATION lib/${OS}
+        LIBRARY DESTINATION lib/${OS}
+        )
+    SET(INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/include)
+    FILE(GLOB_RECURSE HDRS LIST_DIRECTORIES false "${INCLUDE_DIR}/*.h")
+    INSTALL(FILES ${HDRS} DESTINATION "include/SQLiteCpp")
+endif()
 
 if (UNIX AND (CMAKE_COMPILER_IS_GNUCXX OR ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang"))
     set_target_properties(SQLiteCpp PROPERTIES COMPILE_FLAGS "-fPIC")
@@ -203,6 +217,8 @@ option(SQLITECPP_BUILD_EXAMPLES "Build examples." OFF)
 if (SQLITECPP_BUILD_EXAMPLES)
     # add the basic example executable
     add_executable(SQLiteCpp_example1 ${SQLITECPP_EXAMPLES})
+    target_compile_options(SQLiteCpp_example1 PRIVATE -std=c++11 -D_GLIBCXX_USE_CXX11_ABI=0)
+
     target_link_libraries(SQLiteCpp_example1 SQLiteCpp sqlite3)
     # Link target with pthread and dl for linux
     if (UNIX)
